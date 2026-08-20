@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qiskit Fall Fest | Amity</title>
-    <meta name="description" content="Student-led quantum computing fest happening at Amity, in partnership with IBM Qiskit.">
+    <meta name="description"
+        content="Student-led quantum computing fest happening at Amity, in partnership with IBM Qiskit.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
+    <!-- Quantum Particle Canvas Background -->
+    <canvas id="quantum-bg"></canvas>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -40,11 +48,13 @@
             <div class="hero">
                 <!-- Scattering Scales container -->
                 <div class="hero-tiles-container" id="hero-tiles-container"></div>
-                
+
                 <div class="hero-content">
-                    <h1 class="hero-title animate-in">Quantum Computing, <span>Unleashed.</span></h1>
-                    <p class="hero-tagline animate-in delay-1">Join us for the ultimate student-led Qiskit Fall Fest at Amity.</p>
-                    
+                    <img src="details/amity logo.png" alt="Amity Logo" class="hero-amity-logo animate-in" />
+                    <h1 class="hero-title animate-in delay-1">Qiskit Fall Fest, <span>Amity University.</span></h1>
+                    <p class="hero-tagline animate-in delay-2">Join us for the ultimate student-led Qiskit Fall Fest at
+                        Amity.</p>
+
                     <div class="event-details animate-in delay-2">
                         <div class="detail-item">
                             <span class="detail-label">Date</span>
@@ -52,7 +62,7 @@
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Venue</span>
-                            <span class="detail-value">Amity Campus</span>
+                            <span class="detail-value">Amity University Lucknow Campus</span>
                         </div>
                     </div>
 
@@ -66,19 +76,13 @@
         <!-- ABOUT SECTION -->
         <section id="about" class="scroll-section">
             <div class="container section-padding">
-                <div class="about-grid">
-                    <div class="about-card reveal-on-scroll">
-                        <h2 class="section-title split-text-animate">The Global Event</h2>
-                        <p>Qiskit Fall Fest is a student-led, worldwide series of quantum computing events supported by IBM. It features workshops, hackathons, and challenges designed to grow the local quantum community and introduce students to Qiskit.</p>
-                    </div>
-                    <div class="about-card reveal-on-scroll delay-1">
-                        <h2 class="section-title split-text-animate">Amity Event</h2>
-                        <p>[Placeholder Text: Explain what the specific Amity event entails. Mention the target audience, the atmosphere, and any unique campus traditions being incorporated into the fest.]</p>
-                    </div>
-                    <div class="about-card highlight reveal-on-scroll delay-2">
-                        <h2 class="section-title split-text-animate">This Year's Theme</h2>
-                        <p class="theme-text">[Placeholder Text: "Quantum for Sustainability", "The Next Era of Computation", etc.]</p>
-                    </div>
+                <div class="about-single-content reveal-on-scroll">
+                    <h2 class="section-title split-text-animate">About this Event</h2>
+                    <p class="about-text">
+                        Qiskit Fall Fest is a student-led, worldwide series of quantum computing events supported by IBM. It features workshops, hackathons, and challenges designed to grow the local quantum community and introduce students to Qiskit. 
+                        <br><br>
+                        Here at Amity University, we are bringing the cutting edge of Quantum Computing directly to our campus. Join us to explore quantum fundamentals, engage in hands-on circuit building, and tackle real-world optimization problems alongside industry experts.
+                    </p>
                 </div>
             </div>
         </section>
@@ -87,12 +91,12 @@
         <section id="hackathon" class="scroll-section">
             <div class="container section-padding">
                 <h2 class="section-title text-center split-text-animate">Schedule</h2>
-                
+
                 <!-- Clean Vertical Timeline -->
                 <div class="hackathon-subsection">
                     <div class="timeline-container">
                         <div class="timeline-line"></div>
-                        
+
                         <div class="timeline-event slide-in-left">
                             <div class="timeline-dot"></div>
                             <div class="timeline-card">
@@ -273,7 +277,7 @@
                 <div class="register-card reveal-on-scroll">
                     <h2 class="section-title">Ready to Dive into Quantum?</h2>
                     <p class="register-subtitle">Secure your spot for the workshops and hackathon.</p>
-                    
+
                     <div class="register-info">
                         <div class="info-item">
                             <strong>Who:</strong> Open to all students
@@ -287,7 +291,8 @@
                     </div>
 
                     <!-- CTA linking to external form -->
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large hover-pulse">Go to Registration Form</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary btn-large hover-pulse">Go to Registration Form</a>
                     <p class="small-text mt-4">[Placeholder: Devfolio / Google Form Link]</p>
                 </div>
             </div>
@@ -316,4 +321,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
