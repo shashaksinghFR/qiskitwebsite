@@ -80,9 +80,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1rem; /* Reduced padding to move it left */
+    max-width: 100%;
+    margin: 0;
+    padding: 0 4rem; /* Padding to keep it slightly off the absolute edge */
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -96,13 +96,18 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-logo-img {
-    height: 50px; /* Increased from 40px */
+    height: 65px; /* Increased logo size */
     object-fit: contain;
+}
+
+.qiskit-logo {
+    height: 50px; /* Qiskit logo has different proportions */
+    margin-left: 1rem;
 }
 
 .nav-logo .logo-text {
     font-family: var(--font-heading);
-    font-size: 1.8rem; /* Increased from 1.5rem */
+    font-size: 2.2rem; /* Increased text size */
     font-weight: 900;
     color: var(--c-yellow);
     text-transform: uppercase;
@@ -257,7 +262,7 @@ h1, h2, h3, h4, h5 {
     height: calc(100vh - var(--nav-height));
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align contents completely to the left */
     overflow: hidden;
     /* Reveal image is the base background of the hero */
     background-image: url("../details/bgimagemain.png");
@@ -284,6 +289,7 @@ h1, h2, h3, h4, h5 {
     /* Slight rounding for the "scale" look */
     border-radius: 4px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.5); /* Subtle edge definition */
+    filter: brightness(0.65); /* Darken the background pattern to make text pop */
     
     /* Performance & Animation */
     will-change: transform, opacity;
@@ -301,7 +307,7 @@ h1, h2, h3, h4, h5 {
     text-align: left;
     color: var(--c-text);
     max-width: 800px;
-    padding: 0 2rem;
+    padding: 0 4rem; /* Adjust padding to match navbar left edge */
     pointer-events: none; /* Let cursor hit the hero container for the tiles */
     display: flex;
     flex-direction: column;
