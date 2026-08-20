@@ -100,11 +100,6 @@ h1, h2, h3, h4, h5 {
     object-fit: contain;
 }
 
-.qiskit-logo {
-    height: 50px; /* Qiskit logo has different proportions */
-    margin-left: 1rem;
-}
-
 .nav-logo .logo-text {
     font-family: var(--font-heading);
     font-size: 2.2rem; /* Increased text size */
@@ -323,7 +318,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-logo {
-    height: 120px;
+    height: 180px; /* Increased from 120px */
     object-fit: contain;
 }
 
@@ -861,6 +856,14 @@ h1, h2, h3, h4, h5 {
     }
     
     .hero-title { font-size: 2.8rem; }
+    
+    .hero-title-wrapper {
+        gap: 1rem; /* Less space between logos on mobile */
+    }
+    .hero-logo {
+        height: 70px; /* Shrink logos on mobile to prevent overflow */
+    }
+    
     .event-details { flex-direction: column; gap: 1rem; align-items: center; }
     
     .prize-card.gold { padding: 3rem 2rem; }

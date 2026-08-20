@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Number of particles depends on screen size
-        const numParticles = Math.floor((width * height) / 15000);
+        // Number of particles depends on screen size (reduced for performance)
+        const numParticles = Math.floor((width * height) / 25000);
         for (let i = 0; i < numParticles; i++) {
             particles.push(new Particle());
         }
@@ -154,7 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (heroSection && tilesContainer) {
         let tiles = [];
-        const tileSize = 50;
+        // Larger tiles on mobile to drastically reduce DOM nodes and eliminate lag
+        const isMobile = window.innerWidth < 768;
+        const tileSize = isMobile ? 120 : 50;
         let cols = 0;
         let rows = 0;
         
@@ -169,6 +171,27 @@ document.addEventListener('DOMContentLoaded', () => {
             cols = Math.ceil(width / tileSize);
             rows = Math.ceil(height / tileSize);
             
+            // Calculate object-fit: cover equivalent dimensions for the background image
+            // Assuming the base image (bgimagehome) is a standard 16:9 ratio
+            const imgAspect = 1920 / 1080; 
+            const containerAspect = width / height;
+            
+            let bgWidth, bgHeight, bgOffsetX, bgOffsetY;
+            
+            if (containerAspect > imgAspect) {
+                // Container is wider than image (crop top/bottom)
+                bgWidth = width;
+                bgHeight = width / imgAspect;
+                bgOffsetX = 0;
+                bgOffsetY = (height - bgHeight) / 2;
+            } else {
+                // Container is taller than image (crop sides)
+                bgHeight = height;
+                bgWidth = height * imgAspect;
+                bgOffsetX = (width - bgWidth) / 2;
+                bgOffsetY = 0;
+            }
+            
             for (let y = 0; y < rows; y++) {
                 for (let x = 0; x < cols; x++) {
                     const tile = document.createElement('div');
@@ -180,9 +203,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     tile.style.left = `${x * tileSize}px`;
                     tile.style.top = `${y * tileSize}px`;
                     
-                    // Background position to map the full image
-                    tile.style.backgroundSize = `${width}px ${height}px`;
-                    tile.style.backgroundPosition = `-${x * tileSize}px -${y * tileSize}px`;
+                    // Background mapping to perfectly mimic background-size: cover
+                    tile.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;
+                    
+                    // The tile's top-left corner is at (x*tileSize, y*tileSize)
+                    // We subtract this from the global offset to align the background perfectly
+                    const bgPosX = bgOffsetX - (x * tileSize);
+                    const bgPosY = bgOffsetY - (y * tileSize);
+                    tile.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
                     
                     // Store center coords for distance math
                     const centerX = (x * tileSize) + (tileSize / 2);
