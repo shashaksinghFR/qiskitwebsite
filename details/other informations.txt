@@ -1,0 +1,25 @@
+
+schedule 
+
+Day1:
+-Inauguration
+-Quantum Fundamentals
+-Circuits
+ 
+Day2:
+-Qiskit 101
+-Quantum Hardware
+-Quantum Algo
+ 
+Day3
+-Post Quantum Cryptography
+-Quantum Key Distribution
+·Quantum Generated Keys
+Day4
+-Practical Applications
+-Quantum optimization: Introduction use in max cut
+-Hackathon Briefing
+
+other details 
+
+organizers name with their profile photo 

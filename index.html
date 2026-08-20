@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qiskit Fall Fest | Amity</title>
+    <meta name="description" content="Student-led quantum computing fest happening at Amity, in partnership with IBM Qiskit.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="details/amity logo.png" alt="Amity Logo" class="nav-logo-img">
+                <span class="logo-text">Qiskit Fall Fest</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#hackathon" class="nav-link">Hackathon</a></li>
+                <li><a href="#register" class="nav-link btn-nav">Register</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- HOME SECTION -->
+        <section id="home" class="scroll-section">
+            <div class="hero">
+                <!-- Scattering Scales container -->
+                <div class="hero-tiles-container" id="hero-tiles-container"></div>
+                
+                <div class="hero-content">
+                    <h1 class="hero-title animate-in">Quantum Computing, <span>Unleashed.</span></h1>
+                    <p class="hero-tagline animate-in delay-1">Join us for the ultimate student-led Qiskit Fall Fest at Amity.</p>
+                    
+                    <div class="event-details animate-in delay-2">
+                        <div class="detail-item">
+                            <span class="detail-label">Date</span>
+                            <span class="detail-value">TBA</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Venue</span>
+                            <span class="detail-value">Amity Campus</span>
+                        </div>
+                    </div>
+
+                    <!-- Countdown removed -->
+
+                    <a href="#register" class="btn btn-primary animate-in delay-3">Register Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="scroll-section">
+            <div class="container section-padding">
+                <div class="about-grid">
+                    <div class="about-card reveal-on-scroll">
+                        <h2 class="section-title split-text-animate">The Global Event</h2>
+                        <p>Qiskit Fall Fest is a student-led, worldwide series of quantum computing events supported by IBM. It features workshops, hackathons, and challenges designed to grow the local quantum community and introduce students to Qiskit.</p>
+                    </div>
+                    <div class="about-card reveal-on-scroll delay-1">
+                        <h2 class="section-title split-text-animate">Amity Event</h2>
+                        <p>[Placeholder Text: Explain what the specific Amity event entails. Mention the target audience, the atmosphere, and any unique campus traditions being incorporated into the fest.]</p>
+                    </div>
+                    <div class="about-card highlight reveal-on-scroll delay-2">
+                        <h2 class="section-title split-text-animate">This Year's Theme</h2>
+                        <p class="theme-text">[Placeholder Text: "Quantum for Sustainability", "The Next Era of Computation", etc.]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCHEDULE / HACKATHON SECTION -->
+        <section id="hackathon" class="scroll-section">
+            <div class="container section-padding">
+                <h2 class="section-title text-center split-text-animate">Schedule</h2>
+                
+                <!-- Clean Vertical Timeline -->
+                <div class="hackathon-subsection">
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="timeline-event slide-in-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <h4>Day 1</h4>
+                                <span class="timeline-time">Inauguration</span>
+                                <p>Quantum Fundamentals & Circuits</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event slide-in-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <h4>Day 2</h4>
+                                <span class="timeline-time">Qiskit 101</span>
+                                <p>Quantum Hardware & Quantum Algo</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event slide-in-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <h4>Day 3</h4>
+                                <span class="timeline-time">Post Quantum Cryptography</span>
+                                <p>Quantum Key Distribution & Quantum Generated Keys</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-event slide-in-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <h4>Day 4</h4>
+                                <span class="timeline-time">Practical Applications</span>
+                                <p>Quantum optimization: Introduction use in max cut & Hackathon Briefing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tracks -->
+                <div class="hackathon-subsection reveal-on-scroll">
+                    <h3 class="subsection-title">Problem Statements</h3>
+                    <div class="grid-3">
+                        <div class="card">
+                            <h4>Track 1: Quantum Machine Learning</h4>
+                            <p>[Placeholder description of the track]</p>
+                        </div>
+                        <div class="card">
+                            <h4>Track 2: Quantum Optimization</h4>
+                            <p>[Placeholder description of the track]</p>
+                        </div>
+                        <div class="card">
+                            <h4>Track 3: Open Innovation</h4>
+                            <p>[Placeholder description of the track]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rules -->
+                <div class="hackathon-subsection reveal-on-scroll">
+                    <h3 class="subsection-title">Rules & Eligibility</h3>
+                    <ul class="bullet-list">
+                        <li>Team size must be between 2-4 members.</li>
+                        <li>Open to all undergraduate and postgraduate students.</li>
+                        <li>Code must be original and written during the hackathon period.</li>
+                        <li>[Placeholder for more rules]</li>
+                    </ul>
+                </div>
+
+                <!-- Prizes -->
+                <div class="hackathon-subsection reveal-on-scroll">
+                    <h3 class="subsection-title">Prizes</h3>
+                    <div class="grid-3 prizes-grid">
+                        <div class="card prize-card silver">
+                            <div class="prize-icon">🥈</div>
+                            <h4>2nd Place</h4>
+                            <p class="prize-amt">[Amount]</p>
+                            <p class="prize-perks">Certificates + Swag</p>
+                        </div>
+                        <div class="card prize-card gold scale-up">
+                            <div class="prize-icon">🥇</div>
+                            <h4>1st Place</h4>
+                            <p class="prize-amt">[Amount]</p>
+                            <p class="prize-perks">Global Hackathon Invite + Certificates + Swag</p>
+                        </div>
+                        <div class="card prize-card bronze">
+                            <div class="prize-icon">🥉</div>
+                            <h4>3rd Place</h4>
+                            <p class="prize-amt">[Amount]</p>
+                            <p class="prize-perks">Certificates + Swag</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speakers -->
+                <div class="hackathon-subsection reveal-on-scroll">
+                    <h3 class="subsection-title split-text-animate">Distinguished Speakers</h3>
+                    <div class="grid-3">
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Speaker Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Speaker Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Speaker Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizers -->
+                <div class="hackathon-subsection reveal-on-scroll">
+                    <h3 class="subsection-title split-text-animate">Organizing Team</h3>
+                    <!-- 7 Organizers Grid (4 top, 3 centered bottom via CSS) -->
+                    <div class="grid-organizers">
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Organizer Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Organizer Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Organizer Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Organizer Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Organizer Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Organizer Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                        <div class="card person-card">
+                            <div class="person-img circle-img">[Photo]</div>
+                            <h4>[Organizer Name]</h4>
+                            <p class="person-role">Role/Position</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sponsors -->
+                <div class="hackathon-subsection reveal-on-scroll">
+                    <h3 class="subsection-title text-center">Sponsors & Partners</h3>
+                    <div class="sponsors-grid">
+                        <div class="sponsor-logo">
+                            <img src="details/IBMlogo.png" alt="IBM Logo">
+                        </div>
+                        <div class="sponsor-logo">
+                            <img src="details/amity logo.png" alt="Amity Logo">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- REGISTER SECTION -->
+        <section id="register" class="scroll-section">
+            <div class="container section-padding text-center">
+                <div class="register-card reveal-on-scroll">
+                    <h2 class="section-title">Ready to Dive into Quantum?</h2>
+                    <p class="register-subtitle">Secure your spot for the workshops and hackathon.</p>
+                    
+                    <div class="register-info">
+                        <div class="info-item">
+                            <strong>Who:</strong> Open to all students
+                        </div>
+                        <div class="info-item">
+                            <strong>Cost:</strong> Free
+                        </div>
+                        <div class="info-item">
+                            <strong>Format:</strong> Team-based (2-4 members)
+                        </div>
+                    </div>
+
+                    <!-- CTA linking to external form -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large hover-pulse">Go to Registration Form</a>
+                    <p class="small-text mt-4">[Placeholder: Devfolio / Google Form Link]</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>Qiskit Fall Fest</h3>
+                <p>Amity Campus</p>
+                <p>Email: <a href="mailto:placeholder@amity.edu">placeholder@amity.edu</a></p>
+            </div>
+            <div class="footer-social">
+                <!-- Placeholders for icons -->
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">LinkedIn</a>
+                <a href="#" class="social-icon">Discord</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Qiskit Fall Fest Amity. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
