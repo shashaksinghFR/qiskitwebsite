@@ -262,7 +262,7 @@ h1, h2, h3, h4, h5 {
     height: calc(100vh - var(--nav-height));
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align contents completely to the left */
+    justify-content: center; /* Center contents */
     overflow: hidden;
     /* Reveal image is the base background of the hero */
     background-image: url("../details/bgimagemain.png");
@@ -304,19 +304,27 @@ h1, h2, h3, h4, h5 {
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: left;
+    text-align: center;
     color: var(--c-text);
-    max-width: 800px;
-    padding: 0 4rem; /* Adjust padding to match navbar left edge */
+    max-width: 1200px;
+    padding: 0 2rem;
     pointer-events: none; /* Let cursor hit the hero container for the tiles */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
-.hero-amity-logo {
-    width: 120px;
+.hero-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
     margin-bottom: 1.5rem;
+}
+
+.hero-logo {
+    height: 120px;
+    object-fit: contain;
 }
 
 /* Re-enable pointer events for interactive elements inside hero-content */
@@ -345,7 +353,7 @@ h1, h2, h3, h4, h5 {
 
 .event-details {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 3rem;
     margin-bottom: 3rem;
 }
@@ -481,6 +489,7 @@ h1, h2, h3, h4, h5 {
 .timeline-card p {
     color: var(--c-gray);
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* Slide in animations for timeline */
