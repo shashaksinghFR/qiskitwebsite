@@ -323,14 +323,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Process Split Text Elements
     splitTextElements.forEach(el => {
-        const text = el.innerText;
+        const text = el.innerText.trim();
         el.innerHTML = '';
-        const words = text.split(' ');
+        const words = text.split(/\s+/);
         
         words.forEach((word, index) => {
             const span = document.createElement('span');
             span.classList.add('word-span');
-            span.innerText = word + (index < words.length - 1 ? ' ' : '');
+            // Use &nbsp; to preserve the space since inline-block might collapse standard trailing spaces
+            span.innerHTML = word + (index < words.length - 1 ? '&nbsp;' : '');
             // Stagger the transition delay based on word index
             span.style.transitionDelay = `${index * 0.1}s`;
             el.appendChild(span);
