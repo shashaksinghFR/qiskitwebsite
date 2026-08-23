@@ -828,6 +828,19 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================================================
+   Organizer Styles
+   ========================================================================== */
+.person-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem auto;
+    display: block;
+    background-color: var(--c-navy-light); /* fallback if image doesn't load */
+}
+
+/* ==========================================================================
    FAQ Section
    ========================================================================== */
 .faq-container {
