@@ -317,24 +317,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. General Reveal Elements
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
-    // 2. Timeline Cards & Split Text
+    // 2. Timeline Cards & Typing Text
     const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
-    const splitTextElements = document.querySelectorAll('.split-text-animate');
+    const typingElements = document.querySelectorAll('.typing-effect');
     
-    // Process Split Text Elements
-    splitTextElements.forEach(el => {
+    // Process Typing Text Elements
+    typingElements.forEach(el => {
         const text = el.innerText.trim();
         el.innerHTML = '';
-        const words = text.split(/\s+/);
         
-        words.forEach((word, index) => {
+        for(let i = 0; i < text.length; i++) {
             const span = document.createElement('span');
-            span.classList.add('word-span');
-            // Use &nbsp; to preserve the space since inline-block might collapse standard trailing spaces
-            span.innerHTML = word + (index < words.length - 1 ? '&nbsp;' : '');
-            // Stagger the transition delay based on word index
-            span.style.transitionDelay = `${index * 0.1}s`;
+            span.classList.add('char-span');
+            span.innerHTML = text[i] === ' ' ? '&nbsp;' : text[i];
+            span.style.animationDelay = `${i * 0.05}s`;
             el.appendChild(span);
+        }
+        
+        // Add cursor element
+        const cursor = document.createElement('span');
+        cursor.classList.add('typing-cursor');
+        el.appendChild(cursor);
+    });
+
+    /* ==========================================================================
+       FAQ Interactivity
+       ========================================================================== */
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            faqItems.forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            
+            // Open this item if it wasn't already active
+            if (!isActive) {
+                item.classList.add('active');
+                const answer = item.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.scrollHeight + 30 + "px";
+            }
         });
     });
     
@@ -355,5 +381,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start observing elements
     revealElements.forEach(el => scrollObserver.observe(el));
     slideInElements.forEach(el => scrollObserver.observe(el));
-    splitTextElements.forEach(el => scrollObserver.observe(el));
+    typingElements.forEach(el => scrollObserver.observe(el));
 });

@@ -828,6 +828,193 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--c-navy-light);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--c-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    text-align: left;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.faq-question:hover {
+    color: var(--c-yellow);
+}
+
+.faq-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon::before {
+    top: 9px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+}
+
+.faq-icon::after {
+    top: 0;
+    left: 9px;
+    width: 2px;
+    height: 20px;
+}
+
+.faq-item.active .faq-icon::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    color: var(--c-gray);
+    font-weight: 600;
+}
+
+.faq-item.active .faq-answer {
+    padding-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Venue Section
+   ========================================================================== */
+.venue-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    background: var(--c-panel);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--c-navy-light);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.venue-info {
+    flex: 1;
+}
+
+.venue-details {
+    margin-top: 2rem;
+}
+
+.venue-location {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--c-text);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.venue-icon {
+    color: var(--c-yellow);
+}
+
+.venue-address {
+    font-size: 1rem;
+    color: var(--c-gray);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.venue-map {
+    flex: 1;
+}
+
+/* ==========================================================================
+   Typing Animation & Schedule Enhancements
+   ========================================================================== */
+.typing-effect {
+    position: relative;
+    display: inline-block;
+}
+
+.typing-effect .char-span {
+    opacity: 0;
+    display: none;
+}
+
+.typing-effect.is-visible .char-span {
+    display: inline;
+    animation: typeChar 0.05s forwards;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    background-color: var(--c-yellow);
+    margin-left: 5px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes typeChar {
+    to { opacity: 1; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Enhancing Schedule Dot */
+.timeline-dot {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translate(-50%, -50%) scale(0);
+}
+.timeline-event.is-visible .timeline-dot {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Enhancing Schedule Text stagger */
+.timeline-card p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.3s;
+}
+.timeline-event.is-visible .timeline-card p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
    Responsive Design
    ========================================================================== */
 @media (max-width: 992px) {
