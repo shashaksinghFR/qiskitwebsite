@@ -1042,6 +1042,18 @@ h1, h2, h3, h4, h5 {
 
 @media (max-width: 768px) {
     /* Mobile Nav */
+    .nav-container {
+        padding: 0 1rem;
+    }
+    .nav-logo-img {
+        height: 40px;
+    }
+    .nav-logo .logo-text {
+        font-size: 1.2rem;
+    }
+    .nav-logo {
+        gap: 0.5rem;
+    }
     .hamburger { display: flex; }
     .nav-links {
         position: absolute;
