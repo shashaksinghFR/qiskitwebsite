@@ -6,7 +6,7 @@
     --c-navy: #0a192f; /* Replaced IBM Blue with Navy Blue */
     --c-navy-light: #112240; /* Lighter navy for borders/hover */
     --c-yellow: #f1c21b; /* Accent Yellow */
-    --c-gray: #8892b0;
+    --c-gray: #ffffff;
     
     /* Typography */
     --font-primary: 'Inter', sans-serif;
@@ -264,6 +264,7 @@ h1, h2, h3, h4, h5 {
     background-size: cover;
     background-position: center;
     background-color: var(--c-bg);
+    border-bottom: 4px solid var(--c-yellow);
 }
 
 .hero-tiles-container {
@@ -340,7 +341,7 @@ h1, h2, h3, h4, h5 {
 
 .hero-tagline {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 600;
     margin-bottom: 2rem;
     text-shadow: 0 2px 5px rgba(0,0,0,0.8);
     color: var(--c-gray);
@@ -485,6 +486,7 @@ h1, h2, h3, h4, h5 {
     color: var(--c-gray);
     font-size: 0.95rem;
     line-height: 1.6;
+    font-weight: 600;
 }
 
 /* Slide in animations for timeline */
@@ -524,11 +526,12 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 1rem;
 }
 
-.card p { color: var(--c-gray); }
+.card p { color: var(--c-gray); font-weight: 600; }
 
 .bullet-list {
     list-style-type: none;
     color: var(--c-gray);
+    font-weight: 600;
 }
 
 .bullet-list li {
@@ -571,6 +574,7 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     color: var(--c-gray);
     font-size: 0.9rem;
+    font-weight: 600;
     border: 3px solid var(--c-navy);
     overflow: hidden;
     transition: border-color 0.3s;
@@ -688,6 +692,7 @@ h1, h2, h3, h4, h5 {
     font-size: 1.2rem;
     margin-bottom: 3rem;
     color: var(--c-gray);
+    font-weight: 600;
 }
 
 .register-info {
@@ -709,6 +714,7 @@ h1, h2, h3, h4, h5 {
     font-size: 0.8rem;
     color: var(--c-gray);
     margin-top: 1rem;
+    font-weight: 600;
 }
 .mt-4 { margin-top: 2rem; }
 
@@ -736,6 +742,7 @@ h1, h2, h3, h4, h5 {
 
 .footer-info p {
     color: var(--c-gray);
+    font-weight: 600;
 }
 
 .footer-social {
@@ -758,6 +765,7 @@ h1, h2, h3, h4, h5 {
     border-top: 1px solid var(--c-navy-light);
     font-size: 0.9rem;
     color: var(--c-gray);
+    font-weight: 600;
 }
 
 /* ==========================================================================
