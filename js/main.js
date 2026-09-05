@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
-        
+
         function resizeCanvas() {
             width = window.innerWidth;
             height = window.innerHeight;
             canvas.width = width;
             canvas.height = height;
         }
-        
+
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
-        
+
         class Particle {
             constructor() {
                 this.x = Math.random() * width;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
-                
+
                 if (this.x < 0 || this.x > width) this.vx = -this.vx;
                 if (this.y < 0 || this.y > height) this.vy = -this.vy;
             }
@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.fill();
             }
         }
-        
+
         // Number of particles depends on screen size (reduced for performance)
         const numParticles = Math.floor((width * height) / 25000);
         for (let i = 0; i < numParticles; i++) {
             particles.push(new Particle());
         }
-        
+
         let mouse = { x: null, y: null };
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
@@ -57,30 +57,30 @@ document.addEventListener('DOMContentLoaded', () => {
             mouse.x = null;
             mouse.y = null;
         });
-        
+
         function animate() {
             ctx.clearRect(0, 0, width, height);
-            
+
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
-                
+
                 // Draw lines between particles
                 for (let j = i; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    
+
                     if (distance < 120) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(136, 146, 176, ${0.4 - distance/300})`; // Gray lines
+                        ctx.strokeStyle = `rgba(136, 146, 176, ${0.4 - distance / 300})`; // Gray lines
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
                     }
                 }
-                
+
                 // Connect particles to mouse
                 if (mouse.x != null) {
                     const dx = particles[i].x - mouse.x;
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < 150) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(241, 194, 27, ${0.8 - distance/180})`; // Yellow line to mouse
+                        ctx.strokeStyle = `rgba(241, 194, 27, ${0.8 - distance / 180})`; // Yellow line to mouse
                         ctx.lineWidth = 1.2;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
@@ -111,12 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
+            if (targetId === '#') return;
+
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 // Close mobile menu if open
                 if (navLinksContainer.classList.contains('active')) {
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
-                
+
                 // Update URL hash without jumping
                 history.pushState(null, null, targetId);
             }
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const heroSection = document.querySelector('.hero');
     const tilesContainer = document.getElementById('hero-tiles-container');
-    
+
     if (heroSection && tilesContainer) {
         let tiles = [];
         // Larger tiles on mobile to drastically reduce DOM nodes and eliminate lag
@@ -159,25 +159,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const tileSize = isMobile ? 120 : 50;
         let cols = 0;
         let rows = 0;
-        
+
         function initGrid() {
             // Clear existing
             tilesContainer.innerHTML = '';
             tiles = [];
-            
+
             const width = heroSection.offsetWidth;
             const height = heroSection.offsetHeight;
-            
+
             cols = Math.ceil(width / tileSize);
             rows = Math.ceil(height / tileSize);
-            
+
             // Calculate object-fit: cover equivalent dimensions for the background image
             // Assuming the base image (bgimagehome) is a standard 16:9 ratio
-            const imgAspect = 1920 / 1080; 
+            const imgAspect = 1920 / 1080;
             const containerAspect = width / height;
-            
+
             let bgWidth, bgHeight, bgOffsetX, bgOffsetY;
-            
+
             if (containerAspect > imgAspect) {
                 // Container is wider than image (crop top/bottom)
                 bgWidth = width;
@@ -191,33 +191,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 bgOffsetX = (width - bgWidth) / 2;
                 bgOffsetY = 0;
             }
-            
+
             for (let y = 0; y < rows; y++) {
                 for (let x = 0; x < cols; x++) {
                     const tile = document.createElement('div');
                     tile.classList.add('hero-tile');
-                    
+
                     // Position
                     tile.style.width = `${tileSize}px`;
                     tile.style.height = `${tileSize}px`;
                     tile.style.left = `${x * tileSize}px`;
                     tile.style.top = `${y * tileSize}px`;
-                    
+
                     // Background mapping to perfectly mimic background-size: cover
                     tile.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;
-                    
+
                     // The tile's top-left corner is at (x*tileSize, y*tileSize)
                     // We subtract this from the global offset to align the background perfectly
                     const bgPosX = bgOffsetX - (x * tileSize);
                     const bgPosY = bgOffsetY - (y * tileSize);
                     tile.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
-                    
+
                     // Store center coords for distance math
                     const centerX = (x * tileSize) + (tileSize / 2);
                     const centerY = (y * tileSize) + (tileSize / 2);
-                    
+
                     tilesContainer.appendChild(tile);
-                    
+
                     tiles.push({
                         element: tile,
                         x: centerX,
@@ -226,43 +226,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        
+
         initGrid();
-        
+
         // Debounce resize
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(initGrid, 200);
         });
-        
+
         // Interaction Logic
         const interactionRadius = 250;
         const maxPush = 120;
-        
+
         function handleInteraction(mouseX, mouseY) {
             tiles.forEach(tile => {
                 const dx = tile.x - mouseX;
                 const dy = tile.y - mouseY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (distance < interactionRadius) {
                     // Calculate intensity (0 to 1, where 1 is at the cursor)
                     const intensity = 1 - (distance / interactionRadius);
-                    
+
                     // Push direction vector
                     // Add small offset to prevent division by zero if cursor is exactly center
                     const safeDist = distance === 0 ? 0.1 : distance;
                     const pushX = (dx / safeDist) * (intensity * maxPush);
                     const pushY = (dy / safeDist) * (intensity * maxPush);
-                    
+
                     // Rotate based on push direction (left/right tilt)
-                    const rotate = (dx / safeDist) * intensity * 60; 
-                    
+                    const rotate = (dx / safeDist) * intensity * 60;
+
                     // Opacity drops when close to cursor to fully reveal underneath
                     const opacity = Math.max(0, 1 - (intensity * 1.8));
                     const scale = 1 - (intensity * 0.3);
-                    
+
                     tile.element.style.transform = `translate3d(${pushX}px, ${pushY}px, 0) rotate(${rotate}deg) scale(${scale})`;
                     tile.element.style.opacity = opacity;
                 } else {
@@ -272,17 +272,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        
+
         let afRequest = null;
         heroSection.addEventListener('mousemove', (e) => {
             const rect = heroSection.getBoundingClientRect();
             const mouseX = e.clientX - rect.left;
             const mouseY = e.clientY - rect.top;
-            
+
             if (afRequest) cancelAnimationFrame(afRequest);
             afRequest = requestAnimationFrame(() => handleInteraction(mouseX, mouseY));
         });
-        
+
         heroSection.addEventListener('mouseleave', () => {
             if (afRequest) cancelAnimationFrame(afRequest);
             tiles.forEach(tile => {
@@ -290,17 +290,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 tile.element.style.opacity = 1;
             });
         });
-        
+
         heroSection.addEventListener('touchmove', (e) => {
-            if(e.touches.length > 0) {
+            if (e.touches.length > 0) {
                 const rect = heroSection.getBoundingClientRect();
                 const mouseX = e.touches[0].clientX - rect.left;
                 const mouseY = e.touches[0].clientY - rect.top;
                 if (afRequest) cancelAnimationFrame(afRequest);
                 afRequest = requestAnimationFrame(() => handleInteraction(mouseX, mouseY));
             }
-        }, {passive: true});
-        
+        }, { passive: true });
+
         heroSection.addEventListener('touchend', () => {
             if (afRequest) cancelAnimationFrame(afRequest);
             tiles.forEach(tile => {
@@ -313,27 +313,27 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        Scroll Reveal & Roadmap Animations
        ========================================================================== */
-    
+
     // 1. General Reveal Elements
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
     // 2. Timeline Cards & Typing Text
     const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
     const typingElements = document.querySelectorAll('.typing-effect');
-    
+
     // Process Typing Text Elements
     typingElements.forEach(el => {
         const text = el.innerText.trim();
         el.innerHTML = '';
-        
-        for(let i = 0; i < text.length; i++) {
+
+        for (let i = 0; i < text.length; i++) {
             const span = document.createElement('span');
             span.classList.add('char-span');
             span.innerHTML = text[i] === ' ' ? '&nbsp;' : text[i];
             span.style.animationDelay = `${i * 0.05}s`;
             el.appendChild(span);
         }
-        
+
         // Add cursor element
         const cursor = document.createElement('span');
         cursor.classList.add('typing-cursor');
@@ -348,13 +348,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
-            
+
             // Close all items
             faqItems.forEach(i => {
                 i.classList.remove('active');
                 i.querySelector('.faq-answer').style.maxHeight = null;
             });
-            
+
             // Open this item if it wasn't already active
             if (!isActive) {
                 item.classList.add('active');
@@ -363,11 +363,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 
+        threshold: 0.15
     };
 
     const scrollObserver = new IntersectionObserver((entries, observer) => {
