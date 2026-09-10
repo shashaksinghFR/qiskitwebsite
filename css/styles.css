@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5 {
 .section-title::after {
     content: '';
     position: absolute;
-    width: 50%;
+    width: 100%;
     height: 4px;
     background: var(--c-yellow);
     bottom: -10px;
@@ -351,7 +351,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-title {
-    font-size: 4.5rem;
+    font-size: 4rem;
     color: var(--c-text);
     margin-bottom: 1rem;
     text-shadow: 0 4px 10px rgba(0,0,0,0.8);
