@@ -27,6 +27,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 90%;
+}
+
 body {
     font-family: var(--font-primary);
     background-color: var(--c-bg);
@@ -191,7 +195,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .section-padding {
-    padding: 6rem 0;
+    padding: 4rem 0;
 }
 
 .section-title {
@@ -368,8 +372,8 @@ h1, h2, h3, h4, h5 {
 .event-details {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .detail-item {
@@ -408,7 +412,7 @@ h1, h2, h3, h4, h5 {
    Hackathon & Roadmap Section
    ========================================================================== */
 .hackathon-subsection {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .subsection-title {
@@ -421,8 +425,8 @@ h1, h2, h3, h4, h5 {
 .timeline-container {
     position: relative;
     max-width: 900px;
-    margin: 4rem auto;
-    padding: 2rem 0;
+    margin: 2rem auto;
+    padding: 1rem 0;
 }
 
 .timeline-line {
@@ -441,7 +445,7 @@ h1, h2, h3, h4, h5 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
     z-index: 2;
 }
@@ -698,7 +702,7 @@ h1, h2, h3, h4, h5 {
    ========================================================================== */
 .register-card {
     background: var(--c-navy);
-    padding: 5rem 3rem;
+    padding: 3rem 2rem;
     border-radius: 12px;
     max-width: 800px;
     margin: 0 auto;
@@ -742,7 +746,7 @@ h1, h2, h3, h4, h5 {
 .footer {
     background: var(--c-panel);
     border-top: 1px solid var(--c-navy-light);
-    padding: 4rem 0 2rem;
+    padding: 2rem 0 1rem;
 }
 
 .footer-container {
