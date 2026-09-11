@@ -106,9 +106,12 @@ h1, h2, h3, h4, h5 {
 
 .nav-logo .logo-text {
     font-family: var(--font-heading);
-    font-size: 2.2rem; /* Increased text size */
+    font-size: 1.5rem; /* Decreased text size */
     font-weight: 900;
-    color: var(--c-yellow);
+    color: var(--c-bg-dark);
+    background: var(--c-yellow);
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -195,7 +198,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .section-padding {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
 }
 
 .section-title {
