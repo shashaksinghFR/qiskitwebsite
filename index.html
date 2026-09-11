@@ -135,18 +135,51 @@
                 <!-- Tracks -->
                 <div id="hackathon" class="hackathon-subsection reveal-on-scroll">
                     <h3 class="subsection-title">Problem Statements</h3>
-                    <div class="grid-3">
-                        <div class="card">
-                            <h4>Problem 1</h4>
-                            <p>Build a hybrid quantum-classical neural network for a simple classification task (e.g. MNIST digits, small dataset).</p>
-                        </div>
-                        <div class="card">
-                            <h4>Problem 2</h4>
-                            <p>Implement a Quantum Support Vector Machine and benchmark it against classical SVM on a small dataset.</p>
-                        </div>
-                        <div class="card">
-                            <h4>Problem 3</h4>
-                            <p>Simulate BB84 quantum key distribution protocol and demonstrate eavesdropping detection.</p>
+                    <div class="atom-wrapper" style="text-align: center; padding: 2rem 0;">
+                        <svg width="180" height="180" viewBox="0 0 200 200" style="margin-bottom: 2rem; overflow: visible;">
+                            <defs>
+                                <path id="orbit-path" d="M 10 100 A 90 30 0 1 0 190 100 A 90 30 0 1 0 10 100" />
+                            </defs>
+                            
+                            <!-- Orbit 1 -->
+                            <g>
+                                <use href="#orbit-path" stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none" />
+                                <circle r="6" fill="#00ffff" style="filter: drop-shadow(0 0 8px #00ffff);">
+                                    <animateMotion dur="3s" repeatCount="indefinite">
+                                        <mpath href="#orbit-path" />
+                                    </animateMotion>
+                                </circle>
+                            </g>
+
+                            <!-- Orbit 2 -->
+                            <g transform="rotate(60 100 100)">
+                                <use href="#orbit-path" stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none" />
+                                <circle r="6" fill="#ff00ff" style="filter: drop-shadow(0 0 8px #ff00ff);">
+                                    <animateMotion dur="4s" repeatCount="indefinite">
+                                        <mpath href="#orbit-path" />
+                                    </animateMotion>
+                                </circle>
+                            </g>
+
+                            <!-- Orbit 3 -->
+                            <g transform="rotate(120 100 100)">
+                                <use href="#orbit-path" stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none" />
+                                <circle r="6" fill="#00ff00" style="filter: drop-shadow(0 0 8px #00ff00);">
+                                    <animateMotion dur="5s" repeatCount="indefinite">
+                                        <mpath href="#orbit-path" />
+                                    </animateMotion>
+                                </circle>
+                            </g>
+                            
+                            <!-- Nucleus -->
+                            <circle cx="100" cy="100" r="14" fill="var(--c-yellow)" style="filter: drop-shadow(0 0 15px var(--c-yellow));">
+                                <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                        
+                        <div class="card" style="max-width: 600px; margin: 0 auto; border: 1px solid var(--c-yellow); box-shadow: 0 0 30px rgba(255, 204, 0, 0.15); background: linear-gradient(145deg, rgba(20,20,25,0.8) 0%, rgba(30,30,40,0.8) 100%);">
+                            <h4 style="font-size: 2.2rem; color: var(--c-yellow); margin-bottom: 0.5rem; letter-spacing: 2px; text-transform: uppercase;">To Be Revealed</h4>
+                            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.6;">Our quantum problem statements are currently being formulated behind the scenes. Check back soon for the official reveal!</p>
                         </div>
                     </div>
                 </div>
